@@ -1,0 +1,69 @@
+=<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EGO</title>
+  <link rel="stylesheet" href="Styles.css">
+  <link rel="icon" type="image/png" href="LOGO.EGO.png">
+</head>
+<body>
+  <div class="container">
+    <h1>EGO</h1>
+    <p>Tu veux te voir en face ?</p>
+
+    <!-- Prompt -->
+    <button onclick="generatePrompt()">Nouveau prompt</button>
+    <p id="prompt"></p>
+
+    <!-- Zone d’écriture -->
+    <textarea id="journal" placeholder="Écris ici..."></textarea>
+    <button onclick="saveEntry()">Sauvegarder</button>
+
+    <!-- Tag manuel -->
+    <label for="tag-select">Classer ton texte :</label>
+    <select id="tag-select">
+      <option value="">— Choisir une émotion —</option>
+      <option value="EGO//Colère">EGO//Colère</option>
+      <option value="EGO//Vide">EGO//Vide</option>
+      <option value="EGO//Honte">EGO//Honte</option>
+      <option value="EGO//Fuite">EGO//Fuite</option>
+      <option value="EGO//Masque">EGO//Masque</option>
+      <option value="EGO//Rupture">EGO//Rupture</option>
+    </select>
+    <p id="tag-message"></p>
+
+    <!-- Mode crise -->
+    <h2>Mode Crise</h2>
+    <button onclick="activateCrisis()">Activer</button>
+
+    <!-- Historique -->
+    <h2>Historique</h2>
+    <label for="filter-select">Filtrer par émotion :</label>
+    <select id="filter-select">
+      <option value="">— Toutes —</option>
+      <option value="EGO//Colère">EGO//Colère</option>
+      <option value="EGO//Vide">EGO//Vide</option>
+      <option value="EGO//Honte">EGO//Honte</option>
+      <option value="EGO//Fuite">EGO//Fuite</option>
+      <option value="EGO//Masque">EGO//Masque</option>
+      <option value="EGO//Rupture">EGO//Rupture</option>
+    </select>
+    <ul id="historique-list"></ul>
+
+    <!-- Statistiques -->
+    <div id="stats"></div>
+  </div>
+
+  <!-- Modale de relecture -->
+  <div id="modal">
+    <div id="modal-content">
+      <button id="close-modal">X</button>
+      <p id="modal-text"></p>
+      <span id="modal-tag"></span>
+      <span id="modal-date"></span>
+    </div>
+  </div>
+
+  <script src="Java.js"></script>
+</body>
+</html>
